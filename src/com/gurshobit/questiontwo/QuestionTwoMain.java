@@ -39,7 +39,7 @@ public class QuestionTwoMain {
 //        Method Two Used -- Own Merge Sort Function
 
         MergeSort mergeSort = new MergeSort();
-        mergeSort.sort(denominations,0, denominations.length - 1);
+        mergeSort.sort(denominations,0, denominations.length - 1,false);
 
         System.out.println("Amount to be paid in following order");
 

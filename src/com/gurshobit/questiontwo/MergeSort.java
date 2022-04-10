@@ -46,21 +46,23 @@ public class MergeSort {
         }
     }
 
-    void sort(int[] inputArray, int leftPointer, int rightPointer){
-
-        if(leftPointer >= rightPointer){
-            int tempPointer = leftPointer;
-            leftPointer = rightPointer;
-            rightPointer = tempPointer;
+    void sort(int[] inputArray, int leftPointer, int rightPointer, boolean isReverse){
+        if(!isReverse){
+            if(leftPointer < rightPointer){
+                int middlePointer = (leftPointer+rightPointer) / 2;
+                sort(inputArray,leftPointer,middlePointer,isReverse);
+                sort(inputArray,middlePointer + 1,rightPointer, isReverse);
+                merge(inputArray,leftPointer,middlePointer,rightPointer);
+            }
         }
 
-        if(leftPointer < rightPointer){
-            int middlePointer = (leftPointer+rightPointer) / 2;
-
-            sort(inputArray,leftPointer,middlePointer);
-            sort(inputArray,middlePointer + 1,rightPointer);
-
-            merge(inputArray,leftPointer,middlePointer,rightPointer);
+        if(isReverse){
+            if(rightPointer < leftPointer){
+                int middlePointer = leftPointer + ((rightPointer - leftPointer) / 2);
+                sort(inputArray,leftPointer,middlePointer,isReverse);
+                sort(inputArray,middlePointer + 1,rightPointer, isReverse);
+                merge(inputArray,leftPointer,middlePointer,rightPointer);
+            }
         }
 
     }
