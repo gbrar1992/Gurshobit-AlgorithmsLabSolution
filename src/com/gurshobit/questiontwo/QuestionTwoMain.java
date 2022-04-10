@@ -8,6 +8,7 @@ public class QuestionTwoMain {
         Scanner scannerInput = new Scanner(System.in);
         int numberOfDenominations = 0;
         int payableAmount = 0;
+        System.out.println("Welcome Traveller");
         do{
             System.out.println("Enter the number of denominations");
             numberOfDenominations = scannerInput.nextInt();
