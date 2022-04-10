@@ -24,7 +24,13 @@ public class QuestionTwoMain {
         System.out.println("Enter the "+ ((numberOfDenominations > 1) ? "denominations":"denomination"));
 
         for(int i = 0; i< denominations.length; i++){
-            denominations[i] = scannerInput.nextInt();
+            int denominationInput = scannerInput.nextInt();
+            if(denominationInput > 0){
+                denominations[i] = denominationInput;
+            } else {
+                System.out.println("Invalid denomination. Enter Correct one.");
+                i--;
+            }
         }
 
         do {
