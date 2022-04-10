@@ -25,7 +25,7 @@ public class MergeSort {
                 inputArray[m] = leftHalf[k];
                 k++;
             } else {
-                inputArray[k] = rightHalf[l];
+                inputArray[m] = rightHalf[l];
                 l++;
             }
             m++;
