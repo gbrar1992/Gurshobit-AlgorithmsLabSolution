@@ -32,7 +32,14 @@ public class QuestionTwoMain {
             payableAmount = scannerInput.nextInt();
         } while(payableAmount < 1);
 
-        Arrays.sort(denominations);
+//        Method One -- In-build Java Function
+
+//        Arrays.sort(denominations);
+
+//        Method Two Used -- Own Merge Sort Function
+
+        MergeSort mergeSort = new MergeSort();
+        mergeSort.sort(denominations,0, denominations.length - 1);
 
         System.out.println("Amount to be paid in following order");
 
