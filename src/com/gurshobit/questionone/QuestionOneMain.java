@@ -4,7 +4,9 @@ import java.util.Scanner;
 
 public class QuestionOneMain {
     public static void main(String[] args) {
+
         Scanner scannerInput = new Scanner(System.in);
+
         int numberOfTransactions = 0;
         int sumOfTransactions = 0;
         int numberOfTargets = 0;
@@ -12,6 +14,7 @@ public class QuestionOneMain {
         int counter = 0;
 
         System.out.println("Welcome to PayMoney");
+
         do{
             System.out.println("Enter Number of Transactions");
             numberOfTransactions = scannerInput.nextInt();
@@ -19,17 +22,21 @@ public class QuestionOneMain {
 
         int[] transactions = new int[numberOfTransactions];
         System.out.println("Enter the "+((numberOfTransactions > 1) ? "transactions":"transaction" ));
+
         for (int i = 0; i< transactions.length; i++){
             transactions[i] = scannerInput.nextInt();
         }
+
         do {
             System.out.println("Enter Number of Targets");
             numberOfTargets = scannerInput.nextInt();
         } while (numberOfTargets < 1);
 
         for(int j = 0; j < numberOfTargets; j++){
+
             System.out.println("Enter the value of target " + (j+1));
             currentTarget = scannerInput.nextInt();
+
             if(currentTarget <= 0){
                 System.out.println("Given target "+(j+1)+" is not achieved");
                 continue;
@@ -47,6 +54,7 @@ public class QuestionOneMain {
             } else {
                 System.out.println("Target "+ (j+1) +" with value "+currentTarget+" is not achieved");
             }
+
             counter = 0;
             sumOfTransactions = 0;
 
